@@ -15,15 +15,13 @@ for (let i = 0; i < getButton.length; i++) {
     loadPlayerName();
     element.style.background="#A2A9AF"
     element.setAttribute('disabled','')
-    
-
   });
   
 }
 
-  
-
+//   function of loadPlayerName
  function loadPlayerName() {
+     // erorr handling
     if (nameCollection.length>5) {
         alert('You are not alled to select more then 5')
         return;
@@ -38,10 +36,8 @@ for (let i = 0; i < getButton.length; i++) {
      }
  }
 
-
-
-//  calculate per player expese 
-
+//  calculation of player expense & others expense
+//========================================================
 
 // get input value 
 function getValueFromInput(id){
@@ -49,9 +45,10 @@ function getValueFromInput(id){
     return inputValue
 }
 
-
+// function of per player expense 
 function handleCalculate(){
     const getPlayerExpense=getValueFromInput("per-player-expense")
+    // erorr handling
   if (!nameCollection.length) {
       alert('Please select at list one player')
       return
@@ -65,17 +62,18 @@ function handleCalculate(){
         
         return
     }
+    // calcualtion expense of total players
     const totalPlayerExpense=parseFloat(getPlayerExpense)*nameCollection.length
-    const getPlayerExpenseResult=document.getElementById("player-expense").innerText=totalPlayerExpense.toFixed(2)
-    return getPlayerExpenseResult
-    
+    const getPlayerExpenseResult=document.getElementById("player-expense").innerText=Number(totalPlayerExpense.toFixed(2));
+    return getPlayerExpenseResult 
 }
 
-
+//  function of calculateTotal
 function calculateTotal(){
     const managerExpense=getValueFromInput("manager-expense")
     const coachExpense=getValueFromInput("coach-expense")
     const playersExpense=handleCalculate()
+    //error handling
     if(isNaN(managerExpense)||isNaN(coachExpense)){
         alert("Please provide a value")  
         return
@@ -90,9 +88,9 @@ function calculateTotal(){
     alert("Input value shoud not be string ")
     return
   }
-
-  let  totalexpense=(managerExpense+coachExpense+playersExpense )
-
-  document.getElementById("result").innerText=parseFloat(totalexpense).toFixed(2) 
+  // handling calculation total
+  const  totalexpense=(managerExpense+coachExpense+playersExpense );
+  document.getElementById("result").innerText=Number(parseFloat(totalexpense).toFixed(2));
  
 }
+// End Player Calcualtion
