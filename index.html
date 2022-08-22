@@ -3,19 +3,19 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-     <!-- title -->
+    <!-- title -->
     <title>FootballFanCast</title>
     <!-- tailwind css -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- external css style -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css" />
   </head>
   <body class="bg-[#151515]">
     <!-- start header section -->
     <header class="">
       <div class="lg:grid grid-cols-4 bg-[#000000] lg:h-[481px]">
         <div class="col-span-1 flex lg:flex-col lg:justify-end justify-center">
-            <!-- header image -->
+          <!-- header image -->
           <img
             class="lg:h-[360px] lg:w-[250px]"
             src="/img/player-1.png"
@@ -24,8 +24,10 @@
         </div>
         <div class="col-span-2 flex justify-center items-center">
           <div>
-             <!-- header title -->
-            <h1 class="lg:text-6xl text-3xl mt-10 lg:mt-0 text-center text-[#FF5E19]">
+            <!-- header title -->
+            <h1
+              class="lg:text-6xl text-3xl mt-10 lg:mt-0 text-center text-[#FF5E19]"
+            >
               FootballFanCast
             </h1>
             <!-- header content -->
@@ -36,18 +38,19 @@
             </p>
           </div>
         </div>
-        <div class="col-span-1 ">
-            <!-- header second image -->
+        <div class="col-span-1">
+          <!-- header second image -->
           <img
-            class="lg:mt-[90px] mx-auto my-10 lg:my-0 block  lg:ml-[55px]"
+            class="lg:mt-[90px] mx-auto my-10 lg:my-0 block lg:ml-[55px]"
             src="/img/player-2.png"
             alt="player photo"
           />
         </div>
       </div>
     </header>
-<!-- end header section -->
-    <main class="lg:my-[74px] ">
+    <!-- end header section -->
+    <main class="lg:my-[74px]">
+      <!-- start player-card section -->
       <section class="container mx-auto grid lg:grid-cols-4 mb-10 lg:mb-28">
         <div class="col-span-3 grid lg:grid-cols-3 gap-5">
           <div class="text-center w-[90%] mx-auto border border-[#434343]">
@@ -94,7 +97,6 @@
               <span>30 Goals</span>. <span>122 Assist</span>
             </p>
             <button
-            
               class="bg-[#015196] card-button my-5 w-[90%] py-2 text-[#FFFFFF] font-semibold uppercase"
             >
               select
@@ -149,48 +151,97 @@
             </button>
           </div>
         </div>
-        <div class="col-span-1  ">
-          <div class="lg:px-6 py-4 mx-4 lg:mx-0 mt-2 lg:mt-0 lg:ml-10 bg-[#000000]">
-            <h1 class="text-[24px] text-white font-semibold mb-3 text-center">Selected Five</h1>
-            <hr class="w-8/12 mx-auto">
-            <ol class="list-decimal h-[250px] mt-4 ml-6 text-base" id="name-wraper" >
-            </ol>
+        <!-- End player-card section -->
+        <div class="col-span-1">
+          <!-- start players select section -->
+          <div
+            class="lg:px-6 py-4 mx-4 lg:mx-0 mt-2 lg:mt-0 lg:ml-10 bg-[#000000]"
+          >
+            <h1 class="text-[24px] text-white font-semibold mb-3 text-center">
+              Selected Five
+            </h1>
+            <hr class="w-8/12 mx-auto" />
+            <ol
+              class="list-decimal h-[250px] mt-4 ml-6 text-base"
+              id="name-wraper"
+            ></ol>
           </div>
-          
+          <!-- End players select section -->
           <div class="px-6 py-4 lg:ml-10 mx-4 lg:mx-0 bg-[#000000] mt-6">
-            <h1 class="text-[24px] text-white font-semibold mb-4 text-center">Budget</h1>
+            <!-- start players budget section -->
+            <h1 class="text-[24px] text-white font-semibold mb-4 text-center">
+              Budget
+            </h1>
             <p class="text-white flex">
-                <span class="w-6/12 inline-block text-[#AFAFAF]">Per Player</span>
-                <input  id="per-player-expense" class="w-6/12 outline-none text-[#FFFFFF] font-extralight bg-black border"/>
+              <!-- per player input section -->
+              <span class="w-6/12 inline-block text-[#AFAFAF]">Per Player</span>
+              <input
+                id="per-player-expense"
+                class="w-6/12 outline-none text-[#FFFFFF] font-extralight bg-black border"
+              />
             </p>
-            <button onclick="handleCalculate()" class="bg-[#015196] text-white font-semibold w-[100%] mt-4 py-2 mx-auto block">Calculate</button>
-            <p class="text-white flex mt-4">
-                <span class="w-6/12 inline-block text-[#AFAFAF]">Player Expense</span>
-                <span id="player-expense" class="w-6/12 outline-none text-white">$0000</span>
+            <!-- button section -->
+            <button
+              onclick="handleCalculate()"
+              class="bg-[#015196] text-white font-semibold w-[100%] mt-4 py-2 mx-auto block"
+            >
+              Calculate
+            </button>
+            <!-- player expense section -->
+            <p class="flex mt-4">
+              <span class="w-6/12 inline-block text-[#AFAFAF]"
+                >Player Expense</span
+              >
+              <span class="text-white">$</span
+              ><span id="player-expense" class="w-6/12 outline-none text-white"
+                >0000</span
+              >
             </p>
-            <p class="text-white flex mt-4">
-                <span class="w-6/12 inline-block text-[#AFAFAF]">Manager</span>
-                <input id="manager-expense" class="w-6/12 outline-none text-[#FFFFFF] font-extralight bg-black border"/>
+            <!-- input manager section -->
+            <p class="flex mt-4">
+              <span class="w-6/12 inline-block text-[#AFAFAF]">Manager</span>
+              <input
+                id="manager-expense"
+                class="w-6/12 outline-none text-[#FFFFFF] font-extralight bg-black border"
+              />
             </p>
-            <p class="text-white flex mt-4">
-                <span class="w-6/12 inline-block text-[#AFAFAF]">Coach</span>
-                <input id="coach-expense" class="w-6/12 outline-none text-[#FFFFFF] font-extralight bg-black border"/>
+            <!-- input coach section -->
+            <p class="flex mt-4">
+              <span class="w-6/12 inline-block text-[#AFAFAF]">Coach</span>
+              <input
+                id="coach-expense"
+                class="w-6/12 outline-none text-[#FFFFFF] font-extralight bg-black border"
+              />
             </p>
-            <button onclick="calculateTotal()" class="bg-[#015196] text-white font-semibold w-[100%] mt-4 py-2 mx-auto block">Calculate Total</button>
-            <p class="text-white flex mt-4">
-                <span class="w-6/12 inline-block text-[#AFAFAF]">Total</span>$
-                <span id="result" class="w-6/12 outline-none text-[#FF5E19]">0000</span>
+            <!-- calculateTotal button section -->
+            <button
+              onclick="calculateTotal()"
+              class="bg-[#015196] text-white font-semibold w-[100%] mt-4 py-2 mx-auto block"
+            >
+              Calculate Total
+            </button>
+            <p class="flex mt-4">
+              <span class="w-6/12 inline-block text-[#AFAFAF]">Total</span
+              ><span class="text-[#FF5E19]">$</span>
+              <span id="result" class="w-6/12 outline-none text-[#FF5E19]"
+                >0000</span
+              >
             </p>
           </div>
-
         </div>
       </section>
+      <!-- end players budget section -->
     </main>
-
+    <!-- start footer section -->
     <footer class="h-[100px]">
-        <div class="bg-[#717171] h-[1px] "></div>
-        <h1 class="text-white text-center mt-8">Copyright &copy;2022 All Rights Reserved.</h1>
+      <div class="bg-[#717171] h-[1px]"></div>
+      <h1 class="text-white text-center mt-8">
+        Copyright &copy;2022 All Rights Reserved.
+      </h1>
     </footer>
+    <!-- end footer section -->
+
+    <!-- external js link section -->
     <script src="./js/app.js"></script>
   </body>
 </html>
